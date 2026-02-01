@@ -7,7 +7,7 @@ const sessionExpiryManager = require('./services/session-expiry-service');
 const app = express();
 app.use(express.json());
 app.use(cors({
-    origin: /^http:\/\/localhost(:[0-9]+)?$/,
+    origin: process.env.CORS_ORIGIN || '*',
     optionsSuccessStatus: 200
 }));
 
